@@ -1,0 +1,166 @@
+<!--
+Author : Aymeric Herchuelz
+Date : 2020-10
+But : Projet simplon de jeu de course à l'escargots
+GIT !!!
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	    <meta charset="utf-8" />
+		<link href="bleuetnoir.css" rel="stylesheet">
+		<link rel="stylesheet" href="border.css">
+		<link rel="stylesheet" href="lien.css">
+        <title>Course a l'escargot</title>
+        <link href="table.css" rel="stylesheet">
+        <link href="table.css" rel="stylesheet">
+        <script>
+
+function lancer(n)
+{
+  // Lancer et afficher le dé avec les escargot de couleurs
+    for (i=1 , suite='' ; i<=n ; i++ )
+    {
+        de=Math.ceil(4*Math.random());
+        suite=suite + '<img src=\'image/' + de.toString() + '.png\' alt=\'' + de.toString() + '\'/> &nbsp;'
+    }
+    mydiv.innerHTML = suite;
+}
+// Deplacement des pions escargots : drag and drop
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+
+    </head>
+    <div><musique><audio src="celtic_folk_music_fire_quest_instrumental_folk_traditional_-7580660170963480291.mp3" controls autoplay> </audio></div>
+
+
+
+    <body>
+      <!-- En-tete du jeu -->
+      <center>
+        <img src="snail.png">
+        <h1> <div><strong><FONT size = "50pt"><font-style: oblique>Course a l'escargot<h1></center></strong></div>
+        <center>
+                    <!-- Un bouton avec '+' dedans, et un onclick qui appelle une fonction avec -->
+                    <!-- en param le bouton et l'id du div à afficher/masquer. -->
+                    <button type="button" onclick="toggle_div(this,'id_du_div');">regle</button>
+
+                    <!-- Un div caché avec un attribut id -->
+                    <div id="id_du_div" style="display:none;">
+                    <p> <FONT size = "10pt">
+
+        <h2>Pour 2 à 4 joueurs, de 3 à 7 ans pour environ 15 minutes.</h2>
+
+        <h2>principe</h2>
+        <p>Le jeu se compose d'un plateau représentant une piste de course, de 4 escargots en bois de 4 couleurs différentes ainsi que de 2 dés dont chaque face correspond à la couleur d'un escargot.</br>
+
+        Le but du jeu est de faire franchir la ligne d'arrivée à l'un des escargots.</br>
+
+        Chaque joueur lance à tour de rôle les 2 dés et fait avancer d'une case les escargots dont la couleur est sortie.</br> Si la couleur est la même sur les deux dés, l'escargot correspondant avance de deux cases.</br>
+
+        Le joueur qui fait franchir la ligne d'arrivée à l'un des escargots gagne la partie.</br>
+
+        Une variante du jeu fait également gagner le joueur qui fait franchir la ligne d'arrivée au dernier escargot, ceci afin de prolonger l'intérêt de la course.</p></br>
+
+
+
+                    </div>
+
+                    <!-- Le JS... -->
+                    <script type="text/javascript">
+                    function toggle_div(bouton, id) { // On déclare la fonction toggle_div qui prend en param le bouton et un id
+                    var div = document.getElementById(id); // On récupère le div ciblé grâce à l'id
+                    if(div.style.display=="none") { // Si le div est masqué...
+                    div.style.display = "block"; // ... on l'affiche...
+                    bouton.innerHTML = "-"; // ... et on change le contenu du bouton.
+                    } else { // S'il est visible...
+                    div.style.display = "none"; // ... on le masque...
+                    bouton.innerHTML = "regle"; // ... et on change le contenu du bouton.
+                    }
+                    }
+                    </script>
+
+                  </p></center>
+                  <input type="button" value="Lancer le dé" onClick="lancer(2);" /><br />
+                  <div id="mydiv">
+                  </div>
+<!-- Plateau de jeu -->
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <table>
+       <tr>
+           <th width="400em"rowspan="4"><img src=""></th>
+             <td width="400em"></td>
+             <td width="400em"></td>
+             <td width="400em"></td>
+             <td width="400em"></td>
+             <td width="400em"></td>
+             <td width="400em"></td>
+             <td width="400em"></td>
+             <td width="400em"></td>
+             <td width="400em"></td>
+             <td ><img id="drag1" src="snail-yellow.png" draggable="true" ondragstart="drag(event)"></td>
+
+       </tr>
+       <tr>
+           <td width="400em"></td>
+           <td width="400em"></td>
+           <td width="400em"></td>
+           <td width="400em"></td>
+           <td width="400em"></td>
+           <td width="400em"></td>
+           <td width="400em"></td>
+           <td width="400em"></td>
+           <td width="400em"></td>
+<td ><img id="drag2" src="snail-pink.png" draggable="true" ondragstart="drag(event)"></td>
+       </tr>
+       <tr>
+         <td width="400em"></td>
+         <td width="400em"></td>
+         <td width="400em"></td>
+         <td width="400em"></td>
+         <td width="400em"></td>
+         <td width="400em"></td>
+         <td width="400em"></td>
+         <td width="400em"></td>
+         <td width="400em"></td>
+         <td width="400em"><img id="drag3" src="snail-red.png" draggable="true" ondragstart="drag(event)"><td>
+       </tr>
+       <tr>
+         <td width="400em"></td>
+         <td width="400em"></td>
+         <td width="400em"></td>
+         <td width="400em"></td>
+         <td width="400em"></td>
+         <td width="400em"></td>
+         <td width="400em"></td>
+         <td width="400em"></td>
+         <td width="400em"></td>
+         <td width="400em"><img id="drag4" src="snail-blue.png" draggable="true" ondragstart="drag(event)"></td>
+       </tr>
+    </table>
+</div>
+
+
+
+
+</div>
+
+
+
+    </body>
+</html>

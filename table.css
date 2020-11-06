@@ -1,0 +1,47 @@
+table
+{
+    border-collapse: collapse;
+}
+td, th /* Mettre une bordure sur les td ET les th */
+{
+    border: 10px solid black;
+    height: 50px
+    width: 500px
+    background-image: url("vue-dessus-detail-du-sol-gazon-terrain-football_3236-1705.jpg");
+
+}
+
+table
+{
+
+    background-image: url("vue-dessus-detail-du-sol-gazon-terrain-football_3236-1705.jpg");
+}
+body
+{
+
+    background-image: url("modele-sans-couture-fleurs-escargots-mignons-modele-pour-tissu-textile-papier-peint-papier-emballage-vetements_103291-56.jpg");
+}
+center
+{
+color: #000000;
+
+  }
+  p,h2
+  {
+  background-color: #87E990;
+  }
+  th
+  {
+
+      background-image: url("Capture d’écran du 2020-10-29 16-19-17.png");
+  }
+
+  h1
+  {
+  background-color: #87E990
+;
+  }
+  audio {
+    color: #000000;
+
+}
